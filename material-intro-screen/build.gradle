@@ -56,11 +56,11 @@ android {
     }
 
     publish {
-        userOrg = 'tangoagency'
-        groupId = 'agency.tango.android'
+        userOrg = 'indek'
+        groupId = 'eu.indek.android'
         artifactId = 'material-intro-screen'
-        publishVersion = '0.0.5'
+        publishVersion = '0.0.6'
         desc = ''
-        website = 'https://github.com/TangoAgency/material-intro-screen'
+        website = 'https://github.com/radosdesign/material-intro-screen'
     }
 }

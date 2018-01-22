@@ -33,7 +33,7 @@ public class InkPageIndicator extends View implements CustomViewPager.OnPageChan
 
     private static final float INVALID_FRACTION = -1f;
     private static final float MINIMAL_REVEAL = 0.00001f;
-    private final Paint selectedPaint;
+    private Paint selectedPaint;
     private final Path unselectedDotPath;
     private final Path unselectedDotLeftPath;
     private final Path unselectedDotRightPath;
@@ -51,6 +51,7 @@ public class InkPageIndicator extends View implements CustomViewPager.OnPageChan
     private int gap;
     private long animDuration;
     private int unselectedColour;
+    private int selectedColour;
     private float dotRadius;
     private float halfDotRadius;
     private long animHalfDuration;
@@ -551,6 +552,12 @@ public class InkPageIndicator extends View implements CustomViewPager.OnPageChan
         unselectedColour = secondaryColor;
         unselectedPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         unselectedPaint.setColor(unselectedColour);
+    }
+
+    public void setPageIndicatorSelectedColor(int color) {
+        selectedColour = color;
+        selectedPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        selectedPaint.setColor(selectedColour);
     }
 
     @Override

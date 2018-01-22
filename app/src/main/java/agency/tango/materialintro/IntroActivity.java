@@ -27,8 +27,8 @@ public class IntroActivity extends MaterialIntroActivity {
                 });
 
         addSlide(new SlideFragmentBuilder()
-                        .backgroundColor(R.color.first_slide_background)
-                        .buttonsColor(R.color.first_slide_buttons)
+                        .backgroundColor(R.color.first_slide_background, android.R.color.black)
+                        .buttonsColor(R.color.first_slide_buttons, android.R.color.black)
                         .image(R.drawable.img_office)
                         .title("Organize your time with us")
                         .description("Would you try?")
@@ -41,8 +41,8 @@ public class IntroActivity extends MaterialIntroActivity {
                 }, "Work with love"));
 
         addSlide(new SlideFragmentBuilder()
-                .backgroundColor(R.color.second_slide_background)
-                .buttonsColor(R.color.second_slide_buttons)
+                .backgroundColor(R.color.second_slide_background, android.R.color.black)
+                .buttonsColor(R.color.second_slide_buttons, android.R.color.black)
                 .title("Want more?")
                 .description("Go on")
                 .build());
@@ -50,8 +50,8 @@ public class IntroActivity extends MaterialIntroActivity {
         addSlide(new CustomSlide());
 
         addSlide(new SlideFragmentBuilder()
-                        .backgroundColor(R.color.third_slide_background)
-                        .buttonsColor(R.color.third_slide_buttons)
+                        .backgroundColor(R.color.third_slide_background, android.R.color.black)
+                        .buttonsColor(R.color.third_slide_buttons, android.R.color.black)
                         .possiblePermissions(new String[]{Manifest.permission.CALL_PHONE, Manifest.permission.READ_SMS})
                         .neededPermissions(new String[]{Manifest.permission.CAMERA, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION})
                         .image(R.drawable.img_equipment)
@@ -66,8 +66,8 @@ public class IntroActivity extends MaterialIntroActivity {
                 }, "Tools"));
 
         addSlide(new SlideFragmentBuilder()
-                .backgroundColor(R.color.fourth_slide_background)
-                .buttonsColor(R.color.fourth_slide_buttons)
+                .backgroundColor(R.color.fourth_slide_background, android.R.color.black)
+                .buttonsColor(R.color.fourth_slide_buttons, android.R.color.black)
                 .title("That's it")
                 .description("Would you join us?")
                 .build());

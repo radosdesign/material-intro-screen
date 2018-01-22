@@ -19,7 +19,9 @@ import agency.tango.materialintroscreen.parallax.ParallaxFragment;
 
 public class SlideFragment extends ParallaxFragment {
     private final static String BACKGROUND_COLOR = "background_color";
+    private final static String FOREGROUND_COLOR = "foreground_color";
     private static final String BUTTONS_COLOR = "buttons_color";
+    private static final String BUTTONS_FOREGROUND_COLOR = "buttons_foreground_color";
     private static final String TITLE = "title";
     private static final String DESCRIPTION = "description";
     private static final String NEEDED_PERMISSIONS = "needed_permission";
@@ -28,7 +30,9 @@ public class SlideFragment extends ParallaxFragment {
     private static final int PERMISSIONS_REQUEST_CODE = 15621;
 
     private int backgroundColor;
+    private int foregroundColor;
     private int buttonsColor;
+    private int buttonsForegroundColor;
     private int image;
     private String title;
     private String description;
@@ -44,7 +48,9 @@ public class SlideFragment extends ParallaxFragment {
 
         Bundle bundle = new Bundle();
         bundle.putInt(BACKGROUND_COLOR, builder.backgroundColor);
+        bundle.putInt(FOREGROUND_COLOR, builder.foregroundColor);
         bundle.putInt(BUTTONS_COLOR, builder.buttonsColor);
+        bundle.putInt(BUTTONS_FOREGROUND_COLOR, builder.buttonsForegroundColor);
         bundle.putInt(IMAGE, builder.image);
         bundle.putString(TITLE, builder.title);
         bundle.putString(DESCRIPTION, builder.description);
@@ -73,7 +79,9 @@ public class SlideFragment extends ParallaxFragment {
     public void initializeView() {
         Bundle bundle = getArguments();
         backgroundColor = bundle.getInt(BACKGROUND_COLOR);
+        foregroundColor = bundle.getInt(FOREGROUND_COLOR);
         buttonsColor = bundle.getInt(BUTTONS_COLOR);
+        buttonsForegroundColor = bundle.getInt(BUTTONS_FOREGROUND_COLOR);
         image = bundle.getInt(IMAGE, 0);
         title = bundle.getString(TITLE);
         description = bundle.getString(DESCRIPTION);
@@ -89,6 +97,9 @@ public class SlideFragment extends ParallaxFragment {
 
     public int buttonsColor() {
         return buttonsColor;
+    }
+    public int buttonsForegroundColor() {
+        return buttonsForegroundColor;
     }
 
     public boolean hasAnyPermissionsToGrant() {
@@ -113,7 +124,9 @@ public class SlideFragment extends ParallaxFragment {
 
     private void updateViewWithValues() {
         titleTextView.setText(title);
+        titleTextView.setTextColor(foregroundColor);
         descriptionTextView.setText(description);
+        descriptionTextView.setTextColor(foregroundColor);
 
         if (image != 0) {
             imageView.setImageDrawable(ContextCompat.getDrawable(getActivity(), image));
